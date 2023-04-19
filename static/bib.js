@@ -25,9 +25,9 @@ bibliography.set('AQY22', {
 
 bibliography.set('BBSS23', {
   authors: 'Behera, Brakerski, Sattath and Shmueli',
-  title: 'Quantum Cryptography with Classical Communication via Proof of Destruction',
-  journal: "Unpublished Manuscript",
-  url: ''
+  title: 'Pseudorandomness with Proof of Destruction and Applications',
+  journal: "IACR eprint, 2023",
+  url: 'https://eprint.iacr.org/2023/543'
 });
 
 bibliography.set('BCQ22', {
