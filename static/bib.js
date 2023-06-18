@@ -16,6 +16,14 @@ bibliography.set('AGQY22',{
   url:'https://link.springer.com/chapter/10.1007/978-3-031-22318-1_9'
 });
 
+bibliography.set('ALY23',{
+  authors: 'Ananth,  Lin and Yuen',
+  title: 'Pseudorandom Strings from Pseudorandom Quantum States',
+  journal:"IACR eprint, 2023",
+  url:'https://eprint.iacr.org/2023/904'
+});
+
+
 bibliography.set('AQY22', {
   authors: 'Ananth, Qian and Yuen',
   title: 'Cryptography from Pseudorandom Quantum States',
@@ -37,12 +45,13 @@ bibliography.set('BCQ22', {
   url: 'https://eprint.iacr.org/2022/1181'
 });
 
-bibliography.set('BMW23', {
-  authors: 'Barooti, Malavolta, and Walter',
-  title: 'A Simple Construction of Quantum Public-Key Encryption from Quantum-Secure One-Way Functions',
-  journal: "IACR eprint, 2023",
-  url: 'https://eprint.iacr.org/2023/306'
-});
+// Subsumed by BGH+23
+// bibliography.set('BMW23', {
+//   authors: 'Barooti, Malavolta, and Walter',
+//   title: 'A Simple Construction of Quantum Public-Key Encryption from Quantum-Secure One-Way Functions',
+//   journal: "IACR eprint, 2023",
+//   url: 'https://eprint.iacr.org/2023/306'
+// });
 
 
 bibliography.set('BS20', {
