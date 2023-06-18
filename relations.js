@@ -90,12 +90,14 @@ PRIM('Short Output PRS','Short Output Pseduorandom States. The output state need
 PRIM('Short Output PRFS',"Short Output Pseduorandom Function-Like States. The output state needs to have Theta(log(n)) qubits.")
 PRIM('OWSG','One-way States Generator')
 PRIM('EFI','efficiently samplable, statistically far but computationally indistinguishable pairs of mixed quantum states')
+PRIM('QPRG','Quantum Pseudorandom Generator')
+PRIM('QPRF','Quantum Pseudorandom Function')
+
 
 
 // Quantum Applications
 PRIM('Private Quantunm Coins','Private Quantum Coins')
 PRIM('Almost Public Quantunm Coins','Almost Public Quantum Coins')
-
 // Quantum Applications with classical communication
 PRIM('Classically Verifiable Private Quantum Coins','Classically Verifiable Private Quantum Coins')
 
@@ -122,6 +124,7 @@ PRIM('CMA MAC w. Classical Tags','CMA MAC with Classical Tags')
 PRIM('SB-COM','Statictically Binding Computationally Hiding Commitments with Classical Communication')
 PRIM('Garbled Circuits','Classical Garbled Circuits for P/poly')
 PRIM('OTS','One-time Signature with a Classical Pulbic-Key')
+PRIM('NA-CPA Sym. Encryption w. Classical Ciphers','Non-adaptive CPA Symmetric Encryption with Classical Ciphers')
 
 
 // PRIM('','')
@@ -147,6 +150,12 @@ IMPLIES('OWF', 'Short Output PRS','BS20b')
 IMPLIES('Short Output PRS','PRS','TRV')
 IMPLIES('OWF','Short Output PRFS','AGQY22')
 IMPLIES('Short Output PRFS','Short Output PRS','TRV')
+
+IMPLIES('Short Output PRS','QPRG','ALY23')
+IMPLIES('Short Output PRFS','QPRF','ALY23')
+
+
+
 IMPLIES('Short Input PRFS','SB-QCOM','AQY22')
 IMPLIES('SB-COM','SB-QCOM','TRV')
 EQUALS('OWSG' ,'OTS with Quantum Public Keys','MY22b')
@@ -157,16 +166,24 @@ IMPLIES('Quanum Pseudo-encryption','Quantum Garbled Circuits' ,'AQY22')
 IMPLIES('Short Output PRS','SB-COM','AGQY22')
 IMPLIES('Long Input PRFS','QSKE','AQY22')
 IMPLIES('QSKE','Quanum Pseudo-encryption','TRV')
-IMPLIES('SB-QCOM','QMPC','MY22a') // PRoved independently in AQY22. Both results rely upon BCKM17.
+IMPLIES('SB-QCOM','QMPC','MY22a') // Proved independently in AQY22. Both results rely upon BCKM17.
 IMPLIES('Long Input PRFS','MAC with Quantum Tags','AQY22')
-//IMPLIES('OWF','CCA-qPKE','BMW23')
 IMPLIES('Long Input PRFS' ,'CCA1-qPKE with quantum ciphers','BGH+23')
 IMPLIES('OWF','1PRS','MY22a')
 IMPLIES('1PRS','NI-SB-QCOM','HMY22')
 EQUALS('NI-SB-QCOM', 'NI-SH-QCOM', 'HMY22');
 IMPLIES('NI-SB-QCOM','SB-QCOM','TRV')
 
+
+// QPRG and QPRF  applications:
+IMPLIES('QPRG','SB-COM','ALY23')
+IMPLIES('QPRG','Pseudo-encryption','ALY23')
+IMPLIES('QPRF','NA-CPA Sym. Encryption w. Classical Ciphers','ALY23')
+IMPLIES('QPRF','QPRG','TRV')
+
+
 //IMPLIES('OWF','CCA-qPKE','BMW23') (Subsumed )
+
 //PRSPD related:
 //--------------
 IMPLIES('OWF','PRSNPD','BBSS23')
