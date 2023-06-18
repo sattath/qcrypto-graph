@@ -58,11 +58,19 @@ bibliography.set('BS20b', {
   url: 'https://doi.org/10.1007/978-3-030-56880-1\_15'
 });
 
-bibliography.set('GSV23', {
-  authors: 'Grilo, Sattath and Vu',
-  title: 'Encryption with Quantum Public Keys',
+// Superseded by BGH+23:
+// bibliography.set('GSV23', {
+//   authors: 'Grilo, Sattath and Vu',
+//   title: 'Encryption with Quantum Public Keys',
+//   journal: "IACR eprint, 2023",
+//   url: 'https://eprint.iacr.org/2023/345'
+// });
+
+bibliography.set('BGH+23', {
+  authors: 'Barooti, Grilo, Huguenin-Dumittan, Malavolta, Sattath, and Vu',
+  title: 'Public-Key Encryption with Quantum Keys',
   journal: "IACR eprint, 2023",
-  url: 'https://eprint.iacr.org/2023/345'
+  url: 'https://eprint.iacr.org/2023/877'
 });
 
 

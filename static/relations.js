@@ -100,9 +100,9 @@ PRIM('Almost Public Quantunm Coins','Almost Public Quantum Coins')
 PRIM('Classically Verifiable Private Quantum Coins','Classically Verifiable Private Quantum Coins')
 
 // Classical Applications with Quantum Communication
-PRIM('CCA-qPKE','CCA Encryption (without Encryption Oracle) with Quantum Pulbic-Keys')
-PRIM('CPA-EO-qPKE','CPA with Encryption Oracle Encryption Scheme with Quantum Pulbic-Keys')
-PRIM('CPA-qPKE with quantum ciphers','Non-reusable CPA Encryption Scheme with Quantum Pulbic-Keys and Quantum Ciphers')
+//PRIM('CCA-qPKE','CCA Encryption (without Encryption Oracle) with Quantum Pulbic-Keys')
+PRIM('CCA1-EO-qPKE','Reusable CCA1 Encryption Scheme with Quantum Pulbic-Keys and Classical Ciphers')
+PRIM('CCA1-qPKE with quantum ciphers','Non-reusable CCA1 Encryption Scheme with Quantum Pulbic-Keys and Quantum Ciphers')
 PRIM('SB-QCOM','Computationally Hiding Statictically Binding Quantum Commitments')
 PRIM('NI-SB-QCOM','Non-Interactive Computationally Hiding Statictically Binding Quantum Commitments')
 PRIM('NI-SH-QCOM','Non-Interactive Statistically Hiding Computationally Binding Quantum Commitments')
@@ -159,12 +159,14 @@ IMPLIES('Long Input PRFS','QSKE','AQY22')
 IMPLIES('QSKE','Quanum Pseudo-encryption','TRV')
 IMPLIES('SB-QCOM','QMPC','MY22a') // PRoved independently in AQY22. Both results rely upon BCKM17.
 IMPLIES('Long Input PRFS','MAC with Quantum Tags','AQY22')
-IMPLIES('OWF','CCA-qPKE','BMW23')
-IMPLIES('Long Input PRFS' ,'CPA-qPKE with quantum ciphers','GSV23')
+//IMPLIES('OWF','CCA-qPKE','BMW23')
+IMPLIES('Long Input PRFS' ,'CCA1-qPKE with quantum ciphers','BGH+23')
 IMPLIES('OWF','1PRS','MY22a')
 IMPLIES('1PRS','NI-SB-QCOM','HMY22')
 EQUALS('NI-SB-QCOM', 'NI-SH-QCOM', 'HMY22');
 IMPLIES('NI-SB-QCOM','SB-QCOM','TRV')
+
+//IMPLIES('OWF','CCA-qPKE','BMW23') (Subsumed )
 //PRSPD related:
 //--------------
 IMPLIES('OWF','PRSNPD','BBSS23')
@@ -179,7 +181,7 @@ IMPLIES('PRSNPD','SB-COM','BBSS23')
 IMPLIES('CCA2 Sym. Encryption w. Classical Ciphers','Pseudo-encryption','BBSS23')
 IMPLIES('PRSPD','Classically Verifiable Private Quantum Coins','BBSS23')
 IMPLIES('PRSPD','OTS','BBSS23') 
-IMPLIES('PRFSPD' ,'CPA-EO-qPKE','GSV23')
+IMPLIES('PRFSPD' ,'CCA1-EO-qPKE','BGH+23')
 //Classical Implications:
 IMPLIES('Classically Verifiable Private Quantum Coins','Private Quantunm Coins','TRV')
 IMPLIES('Short Output PRFS','Pseudo-encryption','AGQY22')
