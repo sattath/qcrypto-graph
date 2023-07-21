@@ -118,6 +118,13 @@ bibliography.set('MY22b',{
   url:'https://eprint.iacr.org/2022/1336'
 });
 
+
+bibliography.set('Yan22',{
+  authors: 'Jun Yan',
+  title: 'General Properties of Quantum Bit Commitments',
+  journal:"ASIACRYPT'22 ",
+  url:'https://link.springer.com/chapter/10.1007/978-3-031-22972-5_22'
+});
 // bibliography.set('hastad1999pseudorandom', {
 //   authors: 'H&#229;stad, Impagliazzo, Levin, and Luby',
 //   title: 'A Pseudorandom Generator from Any One-Way Function',
