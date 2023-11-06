@@ -105,9 +105,9 @@ PRIM('Classically Verifiable Private Quantum Coins','Classically Verifiable Priv
 //PRIM('CCA-qPKE','CCA Encryption (without Encryption Oracle) with Quantum Pulbic-Keys')
 PRIM('CCA1-EO-qPKE','Reusable CCA1 Encryption Scheme with Quantum Pulbic-Keys and Classical Ciphers')
 PRIM('CCA1-qPKE with quantum ciphers','Non-reusable CCA1 Encryption Scheme with Quantum Pulbic-Keys and Quantum Ciphers')
-PRIM('SB-QCOM','Computationally Hiding Statictically Binding Quantum Commitments')
-PRIM('NI-SB-QCOM','Non-Interactive Computationally Hiding Statictically Binding Quantum Commitments')
-PRIM('NI-SH-QCOM','Non-Interactive Statistically Hiding Computationally Binding Quantum Commitments')
+PRIM('SB-QCOM','Computationally Hiding Statictically Binding Quantum Bit Commitments')
+PRIM('NI-SB-QCOM','Non-Interactive Computationally Hiding Statictically Binding Quantum Bit Commitments')
+PRIM('NI-SH-QCOM','Non-Interactive Statistically Hiding Computationally Binding Quantum Bit Commitments')
 
 PRIM('OTS with Quantum Public Keys','One-time Signatures with Quantum Public Keys')
 PRIM('QMPC','Quantum MPC for P/poly with Dishonest Majority')
@@ -121,7 +121,7 @@ PRIM('MAC with Quantum Tags','Reusable (Non-CMA) Length Restriged MAC with Quant
 //Applications with classical communication
 PRIM('CCA2 Sym. Encryption w. Classical Ciphers','CCA2 Symmetric Encryption with Classical Ciphers')
 PRIM('CMA MAC w. Classical Tags','CMA MAC with Classical Tags')
-PRIM('SB-COM','Statictically Binding Computationally Hiding Commitments with Classical Communication')
+PRIM('SB-COM','Statictically Binding Computationally Hiding Bit Commitments with Classical Communication')
 PRIM('Garbled Circuits','Classical Garbled Circuits for P/poly')
 PRIM('OTS','One-time Signature with a Classical Pulbic-Key')
 PRIM('NA-CPA Sym. Encryption w. Classical Ciphers','Non-adaptive CPA Symmetric Encryption with Classical Ciphers')
@@ -170,6 +170,8 @@ IMPLIES('SB-QCOM','QMPC','MY22a') // Proved independently in AQY22. Both results
 IMPLIES('Long Input PRFS','MAC with Quantum Tags','AQY22')
 IMPLIES('Long Input PRFS' ,'CCA1-qPKE with quantum ciphers','BGH+23')
 IMPLIES('OWF','1PRS','MY22a')
+IMPLIES('PRS','1PRS','GJMZ22') // Theorem C.2
+
 IMPLIES('1PRS','NI-SB-QCOM','HMY22')
 EQUALS('NI-SB-QCOM', 'NI-SH-QCOM', 'HMY22');
 IMPLIES('NI-SB-QCOM','SB-QCOM','TRV')
