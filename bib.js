@@ -82,6 +82,13 @@ bibliography.set('BGH+23', {
   url: 'https://eprint.iacr.org/2023/877'
 });
 
+bibliography.set('GJMZ22', {
+  authors: 'Gunn, Ju, Ma, Zhandry',
+  title: 'Commitments to Quantum States',
+  journal: "IACR eprint, 2022",
+  url: 'https://eprint.iacr.org/2022/1358'
+});
+
 
 bibliography.set('HMY22', {
   authors: 'Hhan, Morimae, and Yamakawa',
