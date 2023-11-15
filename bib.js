@@ -38,11 +38,11 @@ bibliography.set('BBSS23', {
   url: 'https://eprint.iacr.org/2023/543'
 });
 
-bibliography.set('BCQ22', {
+bibliography.set('BCQ23', {
   authors: 'Brakerski, Canetti, and Qian',
   title: 'On the computational hardness needed for quantum cryptography',
-  journal: "IACR eprint, 2022",
-  url: 'https://eprint.iacr.org/2022/1181'
+  journal: "ITCS'23",
+  url: 'https://doi.org/10.4230/LIPIcs.ITCS.2023.24'
 });
 
 // Subsumed by BGH+23
@@ -82,19 +82,19 @@ bibliography.set('BGH+23', {
   url: 'https://eprint.iacr.org/2023/877'
 });
 
-bibliography.set('GJMZ22', {
+bibliography.set('GJMZ23', {
   authors: 'Gunn, Ju, Ma, Zhandry',
   title: 'Commitments to Quantum States',
-  journal: "IACR eprint, 2022",
-  url: 'https://eprint.iacr.org/2022/1358'
+  journal: "STOC'23",
+  url: 'https://dl.acm.org/doi/10.1145/3564246.3585198'
 });
 
 
-bibliography.set('HMY22', {
+bibliography.set('HMY23', {
   authors: 'Hhan, Morimae, and Yamakawa',
   title: 'From the Hardness of Detecting Superpositions to Cryptography: Quantum Public Key Encryption and Commitments',
-  journal: "IACR eprint, 2022",
-  url: 'https://eprint.iacr.org/2022/1375'
+  journal: "EUROCRYPT'23",
+  url: 'https://doi.org/10.1007/978-3-031-30545-0_22'
 });
 
 

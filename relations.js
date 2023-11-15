@@ -159,8 +159,8 @@ IMPLIES('Short Output PRFS','QPRF','ALY23')
 IMPLIES('Short Input PRFS','SB-QCOM','AQY22')
 IMPLIES('SB-COM','SB-QCOM','TRV')
 EQUALS('OWSG' ,'OTS with Quantum Public Keys','MY22b')
-EQUALS('SB-QCOM' ,'EFI','BCQ22')
-EQUALS('QMPC' ,'EFI','BCQ22')
+EQUALS('SB-QCOM' ,'EFI','BCQ23')
+EQUALS('QMPC' ,'EFI','BCQ23')
 IMPLIES('Short Input PRFS','Quanum Pseudo-encryption','AQY22')
 IMPLIES('Quanum Pseudo-encryption','Quantum Garbled Circuits' ,'AQY22')
 IMPLIES('Short Output PRS','SB-COM','AGQY22')
@@ -170,10 +170,10 @@ IMPLIES('SB-QCOM','QMPC','MY22a') // Proved independently in AQY22. Both results
 IMPLIES('Long Input PRFS','MAC with Quantum Tags','AQY22')
 IMPLIES('Long Input PRFS' ,'CCA1-qPKE with quantum ciphers','BGH+23')
 IMPLIES('OWF','1PRS','MY22a')
-IMPLIES('PRS','1PRS','GJMZ22') // Theorem C.2
+IMPLIES('PRS','1PRS','GJMZ23') // Theorem C.2
 
-IMPLIES('1PRS','NI-SB-QCOM','HMY22')
-EQUALS('NI-SB-QCOM', 'NI-SH-QCOM', 'HMY22');
+IMPLIES('1PRS','NI-SB-QCOM','HMY23')
+EQUALS('NI-SB-QCOM', 'NI-SH-QCOM', 'HMY23');
 IMPLIES('NI-SB-QCOM','SB-QCOM','TRV')
 IMPLIES('SB-QCOM','NI-SB-QCOM','Yan22')
 
