@@ -78,7 +78,7 @@ PRIM('OWF', 'One-Way Function');
 
 // PRS Variants
 PRIM('PRS','Pseduorandom States')
-PRIM('1PRS','Single-copy PRS')
+PRIM('1PRS','Single-copy PRS, with m>(1+epsilon)n, for some fixed epsilon, for key-length n and output size m.')
 
 PRIM('PRSPD','Pseduorandom States with Proofs of Destruction')
 PRIM('PRSNPD','Pseduorandom States with Nice Proofs of Destruction')
@@ -90,8 +90,8 @@ PRIM('Short Output PRS','Short Output Pseduorandom States. The output state need
 PRIM('Short Output PRFS',"Short Output Pseduorandom Function-Like States. The output state needs to have Theta(log(n)) qubits.")
 PRIM('OWSG','One-way States Generator')
 PRIM('EFI','efficiently samplable, statistically far but computationally indistinguishable pairs of mixed quantum states')
-PRIM('QPRG','Quantum Pseudorandom Generator')
-PRIM('QPRF','Quantum Pseudorandom Function')
+PRIM('QPRG','Pseudodeterministic Quantum Pseudorandom Generator')
+PRIM('QPRF','Pseudodeterministic Quantum Pseudorandom Function')
 
 
 
@@ -171,7 +171,7 @@ IMPLIES('QSKE','Quanum Pseudo-encryption','TRV')
 IMPLIES('SB-QCOM','QMPC','MY22a') // Proved independently in AQY22. Both results rely upon BCKM17.
 IMPLIES('Long Input PRFS','MAC with Quantum Tags','AQY22')
 IMPLIES('Long Input PRFS' ,'CCA1-qPKE with quantum ciphers','BGH+23')
-IMPLIES('OWF','1PRS','MY22a')
+IMPLIES('OWF','1PRS','MY22a') // Remark 2.4: a PRG is a 1PRS. Although, there are other ways to achieve that as well. Basically, construct a "vanilla" PRS with a long output.
 IMPLIES('PRS','1PRS','GJMZ23') // Theorem C.2
 
 IMPLIES('1PRS','NI-SB-QCOM','HMY23')
