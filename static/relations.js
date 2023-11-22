@@ -88,7 +88,8 @@ PRIM('Long Input PRFS', 'Long Input Pseudorandom Function-like States. The input
 PRIM('PRFSPD', 'Long Input Pseudorandom Function-like States with Proofs of Destruction')
 PRIM('Short Output PRS','Short Output Pseduorandom States. The output state needs to have Theta(log(n)) qubits.')
 PRIM('Short Output PRFS',"Short Output Pseduorandom Function-Like States. The output state needs to have Theta(log(n)) qubits.")
-PRIM('OWSG','One-way (pure-)States Generator') //The result by Khurana-Tomer require pure states
+PRIM('OWSG','(Mixed) One-way States Generator') //The result by Khurana-Tomer require pure states
+PRIM('Pure OWSG','Pure One-way States Generator') //The result by Khurana-Tomer require pure states
 PRIM('EFI','efficiently samplable, statistically far but computationally indistinguishable pairs of mixed quantum states')
 PRIM('QPRG','Pseudodeterministic Quantum Pseudorandom Generator')
 PRIM('QPRF','Pseudodeterministic Quantum Pseudorandom Function')
@@ -143,10 +144,12 @@ IMPLIES('Long Input PRFS','PRS','TRV')
 
 IMPLIES('PRS','Private Quantunm Coins','JLS18')
 IMPLIES('Private Quantunm Coins','Almost Public Quantunm Coins','BS20')
-IMPLIES('Private Quantunm Coins','OWSG','MY22b')
+IMPLIES('Private Quantunm Coins','Pure OWSG','MY22b')
 IMPLIES('Quanum Pseudo-encryption','OWSG','MY22b')
 IMPLIES('Quanum Pseudo-encryption','EFI','MY22b')
-IMPLIES('OWSG','EFI','KT23')
+IMPLIES('Pure OWSG','EFI','KT23')
+IMPLIES('Pure OWSG','OWSG','KT23')
+
 
 IMPLIES('PRS','Short Input PRFS','AQY22')
 IMPLIES('Short Input PRFS','PRS','TRV')
