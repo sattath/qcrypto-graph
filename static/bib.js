@@ -104,6 +104,14 @@ bibliography.set('JLS18', {
   journal: "CRYPTO18",
   url: 'https://link.springer.com/chapter/10.1007/978-3-319-96878-0_5'
 });
+
+bibliography.set('KT23', {
+  authors: 'Khurana and Tomer',
+  title: 'Commitments from Quantum One-Wayness',
+  journal: "arXiv",
+  url: 'https://arxiv.org/abs/2310.11526'
+});
+
 bibliography.set('Kre21',{
   authors: 'Kretschmer',
   title: 'Quantum Pseudorandomness and Classical Complexity',
