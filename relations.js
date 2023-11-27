@@ -179,7 +179,7 @@ IMPLIES('Long Input PRFS' ,'CCA1-qPKE with quantum ciphers','BGH+23')
 IMPLIES('OWF','1PRS','MY22a') // Remark 2.4: a PRG is a 1PRS. Although, there are other ways to achieve that as well. Basically, construct a "vanilla" PRS with a long output.
 IMPLIES('PRS','1PRS','GJMZ23') // Theorem C.2
 
-IMPLIES('1PRS','NI-SB-QCOM','HMY23')
+IMPLIES('1PRS','NI-SB-QCOM','MY22a')
 EQUALS('NI-SB-QCOM', 'NI-SH-QCOM', 'HMY23');
 IMPLIES('NI-SB-QCOM','SB-QCOM','TRV')
 IMPLIES('SB-QCOM','NI-SB-QCOM','Yan22')
