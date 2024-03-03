@@ -118,6 +118,16 @@ bibliography.set('Kre21',{
   journal: "TQC21",
   url:'https://drops.dagstuhl.de/opus/volltexte/2021/13997'
 });
+
+
+bibliography.set('MPSY24',{
+  authors: 'Metger, Poremba, Sinha and Yuen',
+  title: 'Pseudorandom unitaries with non-adaptive security',
+  journal:"IACR eprint, 2024",
+  url:'https://eprint.iacr.org/2024/302'
+});
+
+
 bibliography.set('MY22a',{
   authors: 'Morimae and Yamakawa',
   title: ' Quantum Commitments and Signatures Without One-Way Function',
