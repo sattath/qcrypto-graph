@@ -77,7 +77,7 @@ PRIM('OWF', 'One-Way Function');
 
 
 // PRS Variants
-PRIM('PRS','Pseduorandom States')
+PRIM('PRS','Pseduorandom States with superlogarithmic outputs size')
 PRIM('1PRS','Single-copy PRS, with m>(1+epsilon)n, for some fixed epsilon, for key-length n and output size m.')
 
 PRIM('PRSPD','Pseduorandom States with Proofs of Destruction')
@@ -86,16 +86,21 @@ PRIM('Short Input PRFS', 'Short Input Pseudorandom Function-like States with sel
 PRIM('Long Input PRFS', 'Long Input Pseudorandom Function-like States. The input size needs to be omega(log(n)) qubits.')
 //PRIM('Short Input PRFSPD', 'Short Input Pseudorandom Function-like States with Proofs of Destruction')
 PRIM('PRFSPD', 'Long Input Pseudorandom Function-like States with Proofs of Destruction')
-PRIM('Short Output PRS','Short Output Pseduorandom States. The output state needs to have Theta(log(n)) qubits.')
+PRIM('Short Output PRS','Short Output Pseduorandom States. The output state needs to have c*log(n)) qubits for some large enough c.')
 PRIM('Short Output PRFS',"Short Output Pseduorandom Function-Like States. The output state needs to have Theta(log(n)) qubits.")
 PRIM('OWSG','(Mixed) One-way States Generator') //The result by Khurana-Tomer require pure states
 PRIM('Pure OWSG','Pure One-way States Generator') //The result by Khurana-Tomer require pure states
 PRIM('EFI','efficiently samplable, statistically far but computationally indistinguishable pairs of mixed quantum states')
-PRIM('QPRG','Pseudodeterministic Quantum Pseudorandom Generator')
-PRIM('QPRF','Pseudodeterministic Quantum Pseudorandom Function')
+PRIM('PD-PRG','Pseudodeterministic Quantum Pseudorandom Generator')
+PRIM('PD-PRF','Pseudodeterministic Quantum Pseudorandom Function')
+PRIM('PD-OWF','Pseudodeterministic Quantum One-Way Function')
+
 PRIM('Non-adaptive PRU','Non-adaptive Long Input Pseduorandom Unitaries')
 
+PRIM('⊥-PRG','⊥-PRG (a quantum PRG with a recognizable abort)')
+PRIM('⊥-PRF','⊥-PRF (a quantum PRF with a recognizable abort)')
 
+PRIM('One-Way Puzzle','One-Way Puzzle')
 // Quantum Applications
 PRIM('Private Quantunm Coins','Private Quantum Coins')
 PRIM('Almost Public Quantunm Coins','Almost Public Quantum Coins')
@@ -121,12 +126,13 @@ PRIM('MAC with Quantum Tags','Reusable (Non-CMA) Length Restriged MAC with Quant
 
 //Applications with classical communication
 PRIM('CCA2 Sym. Encryption w. Classical Ciphers','CCA2 Symmetric Encryption with Classical Ciphers')
-PRIM('CMA MAC w. Classical Tags','CMA MAC with Classical Tags')
+PRIM('MAC','Length Restricted CMA MAC with Classical Tags')
+PRIM('Imperfect MAC','Imperfect CMA MAC with Classical Tags')
 PRIM('SB-COM','Statictically Binding Computationally Hiding Bit Commitments with Classical Communication')
 PRIM('Garbled Circuits','Classical Garbled Circuits for P/poly')
 PRIM('OTS','One-time Signature with a Classical Pulbic-Key')
 PRIM('NA-CPA Sym. Encryption w. Classical Ciphers','Non-adaptive CPA Symmetric Encryption with Classical Ciphers')
-
+PRIM('SIG','Chosen Plaintext Attack Secure Digital Signature with imperfect completeness')
 
 // PRIM('','')
 // PRIM('','')
@@ -150,21 +156,16 @@ IMPLIES('Private Quantunm Coins','Almost Public Quantunm Coins','BS20')
 IMPLIES('Private Quantunm Coins','Pure OWSG','MY22b')
 IMPLIES('Quanum Pseudo-encryption','OWSG','MY22b')
 IMPLIES('Quanum Pseudo-encryption','EFI','MY22b')
-IMPLIES('Pure OWSG','EFI','KT23')
 IMPLIES('Pure OWSG','OWSG','KT23')
-
 
 IMPLIES('PRS','Short Input PRFS','AQY22')
 IMPLIES('Short Input PRFS','PRS','TRV')
 IMPLIES('OWF', 'Short Output PRS','BS20b')
-IMPLIES('Short Output PRS','PRS','TRV')
 IMPLIES('OWF','Short Output PRFS','AGQY22')
 IMPLIES('Short Output PRFS','Short Output PRS','TRV')
 
-IMPLIES('Short Output PRS','QPRG','ALY23')
-IMPLIES('Short Output PRFS','QPRF','ALY23')
-
-
+IMPLIES('Short Output PRS','PD-PRG','ALY23')
+IMPLIES('Short Output PRFS','PD-PRF','ALY23')
 
 IMPLIES('Short Input PRFS','SB-QCOM','AQY22')
 IMPLIES('SB-COM','SB-QCOM','TRV')
@@ -188,13 +189,23 @@ IMPLIES('NI-SB-QCOM','SB-QCOM','TRV')
 IMPLIES('SB-QCOM','NI-SB-QCOM','Yan22')
 
 
-// QPRG and QPRF  applications:
-IMPLIES('QPRG','SB-COM','ALY23')
-IMPLIES('QPRG','Pseudo-encryption','ALY23')
-IMPLIES('QPRF','NA-CPA Sym. Encryption w. Classical Ciphers','ALY23')
-IMPLIES('QPRF','QPRG','TRV')
+// PD-PRG, PD-PRF, ⊥-PRG and ⊥-PRF  applications:
+IMPLIES('PD-PRG','SB-COM','ALY23')
+IMPLIES('PD-PRG','Pseudo-encryption','ALY23')
+IMPLIES('PD-PRF','NA-CPA Sym. Encryption w. Classical Ciphers','ALY23')
+IMPLIES('PD-PRF','PD-PRG','TRV')
+IMPLIES('PD-PRG','PD-OWF','BBO+24')
+IMPLIES('PD-PRG','⊥-PRG','BBO+24')
+IMPLIES('⊥-PRG','⊥-PRF','BBO+24')
+IMPLIES('⊥-PRF','SIG','BBO+24')
+IMPLIES('SIG','OTS','TRV')
+IMPLIES('⊥-PRF','Imperfect MAC')
 
-
+// One-Way Puzzles
+IMPLIES('Pure OWSG','One-Way Puzzle','KT23')
+IMPLIES('One-Way Puzzle','EFI','KT23') //Requires several steps not shown, see the statement below Theorem 8.3
+IMPLIES('Pseudo-encryption','One-Way Puzzle','KT23')
+IMPLIES('OTS','One-Way Puzzle','KT23')
 //IMPLIES('OWF','CCA-qPKE','BMW23') (Subsumed )
 
 //PRSPD related:
@@ -206,7 +217,7 @@ IMPLIES('PRSNPD','PRSPD','TRV')
 IMPLIES('PRFSPD','PRSPD','TRV')
 
 IMPLIES('PRFSPD','CCA2 Sym. Encryption w. Classical Ciphers','BBSS23')
-IMPLIES('PRFSPD','CMA MAC w. Classical Tags','BBSS23')
+IMPLIES('PRFSPD','MAC','BBSS23')
 IMPLIES('PRSNPD','SB-COM','BBSS23')
 IMPLIES('CCA2 Sym. Encryption w. Classical Ciphers','Pseudo-encryption','BBSS23')
 IMPLIES('PRSPD','Classically Verifiable Private Quantum Coins','BBSS23')
@@ -217,7 +228,8 @@ IMPLIES('PRFSPD' ,'CCA1-EO-qPKE','BGH+23')
 IMPLIES('Classically Verifiable Private Quantum Coins','Private Quantunm Coins','TRV')
 IMPLIES('Short Output PRFS','Pseudo-encryption','AGQY22')
 IMPLIES('Pseudo-encryption','Garbled Circuits','BBSS23')
-IMPLIES('CMA MAC w. Classical Tags','MAC with Quantum Tags','TRV')
+IMPLIES('MAC','MAC with Quantum Tags','TRV')
+IMPLIES('MAC','Imperfect MAC','TRV')
 IMPLIES('Pseudo-encryption','Quanum Pseudo-encryption','TRV')
 IMPLIES('CCA2 Sym. Encryption w. Classical Ciphers','QSKE','TRV')
 IMPLIES('Garbled Circuits','Quantum Garbled Circuits','TRV')
@@ -230,7 +242,8 @@ IMPLIES('OTS','OTS with Quantum Public Keys','TRV')
 BBSEP('PRS','OWF',  'Kre21');
 BBSEP('Long Input PRFS', 'OWF', 'Kre21');
 BBSEP('Non-adaptive PRU','OWF','Kre21');
-
+BBSEP('PD-OWF','PRS','BM24')
+BBSEP('SIG','PRS','CM24')
 // relations of primitives
 // EQUALS('OWF', 'PRNG', 'hastad1999pseudorandom');
 // BBSEP('OWF', 'OWP', 'rudich1984limits');
