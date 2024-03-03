@@ -82,7 +82,7 @@ PRIM('1PRS','Single-copy PRS, with m>(1+epsilon)n, for some fixed epsilon, for k
 
 PRIM('PRSPD','Pseduorandom States with Proofs of Destruction')
 PRIM('PRSNPD','Pseduorandom States with Nice Proofs of Destruction')
-PRIM('Short Input PRFS', 'Short Input Pseudorandom Function-like States. The input size needs to be Theta(log(n)) qubits.')
+PRIM('Short Input PRFS', 'Short Input Pseudorandom Function-like States with selective security. The input size needs to be Theta(log(n)) qubits.')
 PRIM('Long Input PRFS', 'Long Input Pseudorandom Function-like States. The input size needs to be omega(log(n)) qubits.')
 //PRIM('Short Input PRFSPD', 'Short Input Pseudorandom Function-like States with Proofs of Destruction')
 PRIM('PRFSPD', 'Long Input Pseudorandom Function-like States with Proofs of Destruction')
@@ -93,7 +93,7 @@ PRIM('Pure OWSG','Pure One-way States Generator') //The result by Khurana-Tomer 
 PRIM('EFI','efficiently samplable, statistically far but computationally indistinguishable pairs of mixed quantum states')
 PRIM('QPRG','Pseudodeterministic Quantum Pseudorandom Generator')
 PRIM('QPRF','Pseudodeterministic Quantum Pseudorandom Function')
-
+PRIM('Non-adaptive PRU','Non-adaptive Long Input Pseduorandom Unitaries')
 
 
 // Quantum Applications
@@ -137,6 +137,9 @@ PRIM('NA-CPA Sym. Encryption w. Classical Ciphers','Non-adaptive CPA Symmetric E
 
 IMPLIES('OWF','PRS','JLS18')
 IMPLIES('OWF','Long Input PRFS','AQY22')
+
+IMPLIES('OWF', 'Non-adaptive PRU','MPSY24')
+IMPLIES('Non-adaptive PRU','Long Input PRFS','TRV')
 
 IMPLIES('Long Input PRFS','PRS','TRV')
 
@@ -209,6 +212,7 @@ IMPLIES('CCA2 Sym. Encryption w. Classical Ciphers','Pseudo-encryption','BBSS23'
 IMPLIES('PRSPD','Classically Verifiable Private Quantum Coins','BBSS23')
 IMPLIES('PRSPD','OTS','BBSS23') 
 IMPLIES('PRFSPD' ,'CCA1-EO-qPKE','BGH+23')
+
 //Classical Implications:
 IMPLIES('Classically Verifiable Private Quantum Coins','Private Quantunm Coins','TRV')
 IMPLIES('Short Output PRFS','Pseudo-encryption','AGQY22')
@@ -225,7 +229,7 @@ IMPLIES('OTS','OTS with Quantum Public Keys','TRV')
 // separations
 BBSEP('PRS','OWF',  'Kre21');
 BBSEP('Long Input PRFS', 'OWF', 'Kre21');
-
+BBSEP('Non-adaptive PRU','OWF','Kre21');
 
 // relations of primitives
 // EQUALS('OWF', 'PRNG', 'hastad1999pseudorandom');
