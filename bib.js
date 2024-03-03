@@ -2,6 +2,14 @@
 
 var bibliography = new Map();
 
+/* 
+bibliography.set('', {
+  authors: '',
+  title: '',
+  journal: "",
+  url: ''
+});
+*/
 
 bibliography.set('TRV', {
   authors: '',
@@ -31,6 +39,13 @@ bibliography.set('AQY22', {
   url: 'https://link.springer.com/chapter/10.1007/978-3-031-15802-5_8'
 });
 
+bibliography.set('BBO+24', {
+  authors: 'Barhoush, Behera, Ozer, Salvail and Sattath',
+  title: 'Signatures From Pseudorandom States via ⊥-PRFs',
+  journal: "arXiv, 2024",
+  url: 'https://arxiv.org/abs/2311.00847'
+});
+
 bibliography.set('BBSS23', {
   authors: 'Behera, Brakerski, Sattath and Shmueli',
   title: 'Pseudorandomness with Proof of Destruction and Applications',
@@ -53,6 +68,12 @@ bibliography.set('BCQ23', {
 //   url: 'https://eprint.iacr.org/2023/306'
 // });
 
+bibliography.set('BM24', {
+  authors: 'Bouaziz-Ermann and Muguruza',
+  title: 'Almost Public Coins',
+  journal: "IACR eprint, 2024",
+  url: 'https://eprint.iacr.org/2024/291'
+});
 
 bibliography.set('BS20', {
   authors: 'Behera and Sattath',
@@ -82,6 +103,13 @@ bibliography.set('BGH+23', {
   url: 'https://eprint.iacr.org/2023/877'
 });
 
+bibliography.set('CM24', {
+  authors: 'Coladangelo and Mutreja',
+  title: 'On black-box separations of quantum digital signatures from pseudorandom states',
+  journal: "arXiv, 2024",
+  url: 'https://arxiv.org/abs/2402.08194'
+});
+
 bibliography.set('GJMZ23', {
   authors: 'Gunn, Ju, Ma, Zhandry',
   title: 'Commitments to Quantum States',
@@ -108,7 +136,7 @@ bibliography.set('JLS18', {
 bibliography.set('KT23', {
   authors: 'Khurana and Tomer',
   title: 'Commitments from Quantum One-Wayness',
-  journal: "arXiv",
+  journal: "arXiv, 2024",
   url: 'https://arxiv.org/abs/2310.11526'
 });
 
