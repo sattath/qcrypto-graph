@@ -106,7 +106,7 @@ PRIM('Private Quantunm Coins','Private Quantum Coins')
 PRIM('Almost Public Quantunm Coins','Almost Public Quantum Coins')
 // Quantum Applications with classical communication
 PRIM('Classically Verifiable Private Quantum Coins','Classically Verifiable Private Quantum Coins')
-
+PRIM('Tamper Proof QPKE','Tamper Proof CPA PKE with quantum public keys and classical ciphers')
 // Classical Applications with Quantum Communication
 //PRIM('CCA-qPKE','CCA Encryption (without Encryption Oracle) with Quantum Pulbic-Keys')
 PRIM('CCA1-EO-qPKE','Reusable CCA1 Encryption Scheme with Quantum Pulbic-Keys and Classical Ciphers')
@@ -199,7 +199,8 @@ IMPLIES('PD-PRG','⊥-PRG','BBO+24')
 IMPLIES('⊥-PRG','⊥-PRF','BBO+24')
 IMPLIES('⊥-PRF','SIG','BBO+24')
 IMPLIES('SIG','OTS','TRV')
-IMPLIES('⊥-PRF','Imperfect MAC')
+IMPLIES('⊥-PRF','Imperfect MAC','BBO+24')
+IMPLIES('⊥-PRF','Tamper Proof QPKE','BBO+24')
 
 // One-Way Puzzles
 IMPLIES('Pure OWSG','One-Way Puzzle','KT23')
