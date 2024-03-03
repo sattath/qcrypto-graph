@@ -82,7 +82,7 @@ PRIM('1PRS','Single-copy PRS, with m>(1+epsilon)n, for some fixed epsilon, for k
 
 PRIM('PRSPD','Pseduorandom States with Proofs of Destruction')
 PRIM('PRSNPD','Pseduorandom States with Nice Proofs of Destruction')
-PRIM('Short Input PRFS', 'Short Input Pseudorandom Function-like States. The input size needs to be Theta(log(n)) qubits.')
+PRIM('Short Input PRFS', 'Short Input Pseudorandom Function-like States with selective security. The input size needs to be Theta(log(n)) qubits.')
 PRIM('Long Input PRFS', 'Long Input Pseudorandom Function-like States. The input size needs to be omega(log(n)) qubits.')
 //PRIM('Short Input PRFSPD', 'Short Input Pseudorandom Function-like States with Proofs of Destruction')
 PRIM('PRFSPD', 'Long Input Pseudorandom Function-like States with Proofs of Destruction')
@@ -139,6 +139,7 @@ IMPLIES('OWF','PRS','JLS18')
 IMPLIES('OWF','Long Input PRFS','AQY22')
 
 IMPLIES('OWF', 'Non-adaptive PRU','MPSY24')
+IMPLIES('Non-adaptive PRU','Long Input PRFS','TRV')
 
 IMPLIES('Long Input PRFS','PRS','TRV')
 
