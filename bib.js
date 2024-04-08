@@ -103,6 +103,13 @@ bibliography.set('BGH+23', {
   url: 'https://eprint.iacr.org/2023/877'
 });
 
+bibliography.set('CCS24', {
+  authors: 'Chen, Coladangelo and Sattath',
+  title: 'The power of a single Haar random state: constructing and separating quantum pseudorandomness',
+  journal: "arXiv, 2024",
+  url: 'https://arxiv.org/abs/2404.03295'
+});
+
 bibliography.set('CM24', {
   authors: 'Coladangelo and Mutreja',
   title: 'On black-box separations of quantum digital signatures from pseudorandom states',
