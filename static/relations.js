@@ -245,6 +245,7 @@ BBSEP('Long Input PRFS', 'OWF', 'Kre21');
 BBSEP('Non-adaptive PRU','OWF','Kre21');
 BBSEP('PD-OWF','PRS','BM24')
 BBSEP('SIG','PRS','CM24')
+BBSEP('PRS','Short Output PRS','CCS24')
 // relations of primitives
 // EQUALS('OWF', 'PRNG', 'hastad1999pseudorandom');
 // BBSEP('OWF', 'OWP', 'rudich1984limits');
