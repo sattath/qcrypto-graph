@@ -133,6 +133,7 @@ PRIM('Garbled Circuits','Classical Garbled Circuits for P/poly')
 PRIM('OTS','One-time Signature with a Classical Pulbic-Key')
 PRIM('NA-CPA Sym. Encryption w. Classical Ciphers','Non-adaptive CPA Symmetric Encryption with Classical Ciphers')
 PRIM('SIG','Chosen Plaintext Attack Secure Digital Signature with imperfect completeness')
+PRIM('SIG w. Quantum Public Keys','Chosen Plaintext Attack Secure Digital Signature with imperfect completeness and quantum public keys')
 
 // PRIM('','')
 // PRIM('','')
@@ -187,7 +188,7 @@ IMPLIES('1PRS','NI-SB-QCOM','MY22a')
 EQUALS('NI-SB-QCOM', 'NI-SH-QCOM', 'HMY23');
 IMPLIES('NI-SB-QCOM','SB-QCOM','TRV')
 IMPLIES('SB-QCOM','NI-SB-QCOM','Yan22')
-
+IMPLIES('SIG w. Quantum Public Keys','OTS with Quantum Public Keys','TRV')
 
 // PD-PRG, PD-PRF, ⊥-PRG and ⊥-PRF  applications:
 IMPLIES('PD-PRG','SB-COM','ALY23')
@@ -235,7 +236,7 @@ IMPLIES('Pseudo-encryption','Quanum Pseudo-encryption','TRV')
 IMPLIES('CCA2 Sym. Encryption w. Classical Ciphers','QSKE','TRV')
 IMPLIES('Garbled Circuits','Quantum Garbled Circuits','TRV')
 IMPLIES('OTS','OTS with Quantum Public Keys','TRV')
-
+IMPLIES('SIG','SIG w. Quantum Public Keys','TRV')
 //STILL MISSING: Relation QPKE
 
 
@@ -244,7 +245,7 @@ BBSEP('PRS','OWF',  'Kre21');
 BBSEP('Long Input PRFS', 'OWF', 'Kre21');
 BBSEP('Non-adaptive PRU','OWF','Kre21');
 BBSEP('PD-OWF','PRS','BM24')
-BBSEP('SIG','PRS','CM24')
+BBSEP('PRS','SIG w. Quantum Public Keys','CM24')
 BBSEP('1PRS','PRS','CCS24')
 // relations of primitives
 // EQUALS('OWF', 'PRNG', 'hastad1999pseudorandom');
