@@ -1,4 +1,5 @@
 # qcrypto-graph
+ ** Note: This site will be depratcted soon. The new, more up-to date with improved presentation is available at [sattath.github.io/microcrypt-zoo/](https://sattath.github.io/microcrypt-zoo/). **
 An interactive visualization of known implications and separations between quantum cryptographic primitives.
 **Contributions are welcome!**
 
